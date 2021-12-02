@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+To Do Detail
+{% endblock title %}
+
+{% block content %}
+
+<h2>To Do: <span>{{ todo.body }}</span></h2><br>
+
+<a href="{% url 'todo_edit' todo.pk %}" class="btn">Edit</a>
+<a href="{% url 'todo_delete' todo.pk %}" class="btn">Delete</a>
+<a href="{% url 'home' %}" class="btn">Home</a>
+
+
+{% endblock content %}

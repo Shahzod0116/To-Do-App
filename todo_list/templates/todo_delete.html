@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title%}
+To Do Delete
+{% endblock title%}
+
+{% block content %}
+<h1>To Do Delete</h1>
+<p class="text">{{ todo.body }}</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button> <button type="submit"><a href="{% url 'home' %}">home</a></button>
+</form>
+{% endblock content %}

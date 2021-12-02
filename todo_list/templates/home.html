@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} To Do App {% endblock title %}
+
+{% block content %}
+<header>
+    <h1><a href="{% url 'home' %}">To Do App</a></h1>
+</header>
+
+
+{% for todo in object_list %}
+<div class="todoContainer">
+    <p><a href="{% url 'detail' todo.pk %}">
+        <button type="submit" class="update">
+            <a href="{% url 'todo_edit' todo.pk %}">Update</a>
+        </button> {{ todo.body }} 
+        <button type="submit" class="delete"><a href="{% url 'todo_delete' todo.pk %}">Delete</a></button></a></p>
+</div>
+
+{% endfor %}
+<div class="new">
+    <a href="{% url 'todo_new' %}">To Do add</a>
+</div>
+{% endblock content %}
